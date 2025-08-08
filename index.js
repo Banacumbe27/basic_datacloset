@@ -47,6 +47,9 @@ app.post('/wipe', (req, res) => {
     users = [];
     res.json({ success: true });
 });
+app.get('/list',(req,res)=>{
+res.json({users});
+});
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`);
