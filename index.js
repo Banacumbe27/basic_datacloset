@@ -14,7 +14,7 @@ app.post('/', (req, res) => {
 });
 
 app.post('/add', (req, res) => {
-    let available=!users.find(u=>u.username===req.body.username&&u.password===req.body.password);
+    let available=!users.some(u=>u.username===req.body.username);
     if(available) {
     users.push(req.body);
     res.json({ success:true});
